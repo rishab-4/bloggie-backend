@@ -6,7 +6,10 @@ import cors from "cors";
 import * as dotenv from "dotenv";
 const app = express();
 dotenv.config();
-app.use(cors());
+app.use(cors({
+  origin:["localhost:3000"],
+  credentials:false
+}));
 app.use(express.json());
 app.use("/api/user", router);
 app.use("/api/blog", blogRouter);
