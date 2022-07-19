@@ -6,8 +6,10 @@ import cors from "cors";
 import * as dotenv from "dotenv";
 const app = express();
 dotenv.config();
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
+console.log(FRONTEND_URL);
 app.use(cors({
-  origin:["http://localhost:3000"],
+  origin:[FRONTEND_URL],
   credentials:false,
   optionsSuccessStatus: 200
 }));
